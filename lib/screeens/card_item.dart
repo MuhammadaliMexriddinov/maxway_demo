@@ -8,7 +8,7 @@ class CardItem extends StatelessWidget {
   const CardItem({
     Key? key,
     required this.product,
-    required  this.onTap,
+    required this.onTap,
   }) : super(key: key);
 
   @override
@@ -35,13 +35,18 @@ class CardItem extends StatelessWidget {
               Container(
                 height: 80,
                 width: double.infinity,
-                decoration:BoxDecoration(
+                decoration: BoxDecoration(
                   color: Colors.grey.shade300,
                   borderRadius: BorderRadius.circular(12),
-                  image: DecorationImage(fit:BoxFit.fill,image: NetworkImage("https://maxway.uz/_next/image?url=https%3A%2F%2Fcdn.delever.uz%2Fdelever%2F${product.image}&w=1920&q=75")),
+                  image: DecorationImage(
+                      fit: BoxFit.fill,
+                      image: NetworkImage(
+                          "https://maxway.uz/_next/image?url=https%3A%2F%2Fcdn.delever.uz%2Fdelever%2F${product.image}&w=1920&q=75")),
                 ),
               ),
-              SizedBox(height: 5,),
+              SizedBox(
+                height: 5,
+              ),
               Padding(
                 padding: const EdgeInsets.only(top: 10),
                 child: Text(
@@ -54,7 +59,9 @@ class CardItem extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 10,),
+              SizedBox(
+                height: 10,
+              ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Container(
@@ -67,7 +74,11 @@ class CardItem extends StatelessWidget {
                   child: GestureDetector(
                     onTap: () {},
                     behavior: HitTestBehavior.opaque,
-                    child:  Center(child: Text("${product.outPrice}  сум",style: TextStyle(color: Colors.white),)),
+                    child: Center(
+                        child: Text(
+                      "${product.outPrice}  сум",
+                      style: TextStyle(color: Colors.white),
+                    )),
                   ),
                 ),
               ),

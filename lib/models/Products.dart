@@ -1,5 +1,5 @@
-import 'Title.dart';
 import 'Description.dart';
+import 'Title.dart';
 
 class Product {
   Product._({
@@ -22,31 +22,30 @@ class Product {
     required this.description,
     required this.active,
     required this.iikoId,
-    required this.jowiId,});
+    required this.jowiId,
+  });
 
-  factory Product.fromJson(dynamic json) =>
-      Product._(
-        id: json['id'],
-        outPrice: json['out_price'],
-        currency: json['currency'],
-        string: json['string'],
-        type: json['type'],
-        categories:  json['categories'].cast<String>(),
-        brandId: json['brand_id'],
-        rateId: json['rate_id'],
-        image: json['image'],
-        activeInMenu: json['active_in_menu'],
-        hasModifier: json['has_modifier'],
-        fromTime: json['from_time'],
-        toTime: json['to_time'],
-        offAlways: json['off_always'],
-        gallery: json['gallery'],
-        title: Title.fromJson(json['title']),
-        description: Description.fromJson(json['description']),
-        active: json['active'],
-        iikoId: json['iiko_id'],
-        jowiId: json['jowi_id']
-      );
+  factory Product.fromJson(dynamic json) => Product._(
+      id: json['id'],
+      outPrice: json['out_price'],
+      currency: json['currency'],
+      string: json['string'],
+      type: json['type'],
+      categories: json['categories'].cast<String>(),
+      brandId: json['brand_id'],
+      rateId: json['rate_id'],
+      image: json['image'],
+      activeInMenu: json['active_in_menu'],
+      hasModifier: json['has_modifier'],
+      fromTime: json['from_time'],
+      toTime: json['to_time'],
+      offAlways: json['off_always'],
+      gallery: json['gallery'],
+      title: Title.fromJson(json['title']),
+      description: Description.fromJson(json['description']),
+      active: json['active'],
+      iikoId: json['iiko_id'],
+      jowiId: json['jowi_id']);
 
   String id;
   int outPrice;
@@ -86,16 +85,11 @@ class Product {
     map['to_time'] = toTime;
     map['off_always'] = offAlways;
     map['gallery'] = gallery;
-    if (title != null) {
-      map['title'] = title.toJson();
-    }
-    if (description != null) {
-      map['description'] = description.toJson();
-    }
+    map['title'] = title.toJson();
+    map['description'] = description.toJson();
     map['active'] = active;
     map['iiko_id'] = iikoId;
     map['jowi_id'] = jowiId;
     return map;
   }
-
 }

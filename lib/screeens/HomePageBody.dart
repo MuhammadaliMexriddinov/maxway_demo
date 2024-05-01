@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:maxway_demo/screeens/card_item.dart';
 
@@ -6,12 +5,11 @@ import '../models/Categories.dart';
 import '../models/Products.dart';
 
 class HomePageBody extends StatelessWidget {
-  HomePageBody({Key? key,required this.categories,required this.products}) : super(key: key);
+  HomePageBody({Key? key, required this.categories, required this.products})
+      : super(key: key);
 
   var products = <Product>[];
   var categories = <Categories>[];
-
-
 
   String text = "Бургеры";
 
@@ -56,15 +54,13 @@ class HomePageBody extends StatelessWidget {
                             return Container(
                                 height: 90,
                                 width: 230,
-                                margin: EdgeInsets.symmetric(
+                                margin: const EdgeInsets.symmetric(
                                     horizontal: 7, vertical: 5),
                                 decoration: BoxDecoration(
-                                    borderRadius:
-                                    BorderRadius.circular(20),
+                                    borderRadius: BorderRadius.circular(20),
                                     image: DecorationImage(
                                       fit: BoxFit.fill,
-                                      image: NetworkImage(
-                                          hrList[index]),
+                                      image: NetworkImage(hrList[index]),
                                     )));
                           },
                         );
@@ -83,24 +79,26 @@ class HomePageBody extends StatelessWidget {
                     color: Colors.black),
               ),
             ),
-            SizedBox(height: 12,),
+            SizedBox(
+              height: 12,
+            ),
             Container(
               height: 365,
               width: double.infinity,
               child: GridView.builder(
-                shrinkWrap: true,
+                  shrinkWrap: true,
                   physics: NeverScrollableScrollPhysics(),
                   itemCount: products.length,
-                  gridDelegate:
-                  const SliverGridDelegateWithFixedCrossAxisCount(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
                     crossAxisSpacing: 8.0,
                     mainAxisSpacing: 8.0,
                   ),
                   itemBuilder: (context, index) {
-                    return CardItem(product: products[index], onTap: () {
-
-                    },);
+                    return CardItem(
+                      product: products[index],
+                      onTap: () {},
+                    );
                   }),
             )
           ],
